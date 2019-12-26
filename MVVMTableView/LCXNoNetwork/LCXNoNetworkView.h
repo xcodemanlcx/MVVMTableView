@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIButton *reloadBtn;
 @property (nonatomic ,copy) dispatch_block_t reloadBlock;
 
-- (instancetype)initWithSuperView:(UIView *)superView top:(CGFloat)top;
+- (instancetype)initWithListView:(UIView *)listView;
 
 @end
 

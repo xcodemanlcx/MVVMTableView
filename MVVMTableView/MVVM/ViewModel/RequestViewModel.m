@@ -11,25 +11,29 @@
 
 @implementation RequestViewModel
 
-+ (NSArray *)requestAndDealWithDataForPage:(NSUInteger)page{
-    
++ (RequestViewModel *)requestAndDealWithDataForPage:(NSUInteger)page{
     //1 获取网络数据
     NSArray *modelArr = [self requestDataWithPage:page];
-    
     //2 网络数据逻辑处理
-    return [self dealWithRequestData:modelArr];
+    modelArr = [self dealWithRequestData:modelArr];
+    
+    //viewmodel数据
+    RequestViewModel *requestViewModel = [RequestViewModel new];
+    requestViewModel.modelArr = modelArr;
+    requestViewModel.totalSize = 15;
+    return requestViewModel;
 }
 
 + (NSArray *)requestDataWithPage:(NSUInteger)page{
     NSMutableArray *modelArr = @[].mutableCopy;
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < kPageSize; i++) {
         Model *model = [Model new];
         model.province = [NSString stringWithFormat:@"%ld-广东省",page];
         model.city = @"深圳市";
         model.district = @"福田区";
         [modelArr addObject:model];
     }
-    return modelArr.copy;
+    return modelArr;
 }
 
 + (NSArray *)dealWithRequestData:(NSArray *)modelArr{

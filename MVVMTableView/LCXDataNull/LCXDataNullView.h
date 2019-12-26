@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic ,strong) UIImageView *tipImgView;
 @property (nonatomic, strong) UILabel *tipLab;
 
-- (instancetype)initWithSuperView:(UIView *)superView top:(CGFloat)top;
+- (instancetype)initWithListView:(UIView *)listView;
 
 @end
 

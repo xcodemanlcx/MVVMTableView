@@ -17,7 +17,7 @@ UITableView *AddTableView(UIView *superView, CGRect frame, UIColor *backgroundCo
     tableView.dataSource = doubleDelegate;
     tableView.delegate = doubleDelegate;
     
-    //base settting
+    //app base settting
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.showsVerticalScrollIndicator = NO;
     tableView.backgroundView = nil;

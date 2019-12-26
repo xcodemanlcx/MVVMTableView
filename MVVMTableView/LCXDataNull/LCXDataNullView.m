@@ -11,15 +11,16 @@
 
 @implementation LCXDataNullView
 
-- (instancetype)initWithSuperView:(UIView *)superView top:(CGFloat)top
+- (instancetype)initWithListView:(UIView *)listView
 {
     self = [super init];
     if (self) {
-        self.backgroundColor = superView.backgroundColor;
-        self.frame = (CGRect){{0, top}, superView.frame.size};
-        [superView addSubview:self];
         
-        _tipImgView = [[UIImageView alloc] initWithFrame:CGRectMake((superView.frame.size.width -78)/2, 150, 78, 78)];
+        self.backgroundColor = listView.superview.backgroundColor;
+        self.frame = listView.frame;
+        [listView.superview addSubview:self];
+        
+        _tipImgView = [[UIImageView alloc] initWithFrame:CGRectMake((self.frame.size.width -78)/2, 150, 78, 78)];
         [self addSubview:_tipImgView];
         _tipImgView.image = [UIImage imageNamed:@"noData"];
         
