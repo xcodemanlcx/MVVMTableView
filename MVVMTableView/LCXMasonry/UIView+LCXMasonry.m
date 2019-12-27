@@ -14,12 +14,12 @@
 
 @implementation UIView (LCXMasonry)
 
-- (void)lcx_safeBottomWithBottom:(CGFloat)bottom top:(CGFloat)top{
+- (void)lcx_safeBottomWithTop:(CGFloat)top{
     if (self.superview) {
         [self makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.equalTo(self.superview);
             make.top.equalTo(self.superview).offset(top);
-            [self lcx_mas_setSafeBottomWithOffset:bottom make:make];
+            [self lcx_mas_setSafeBottomWithOffset:0 make:make];
         }];
     }
 }

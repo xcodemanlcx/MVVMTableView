@@ -12,10 +12,9 @@
 @implementation LCXDataNullView
 
 - (instancetype)initWithListView:(UIView *)listView
-{
+{    
     self = [super init];
     if (self) {
-        
         self.backgroundColor = listView.superview.backgroundColor;
         self.frame = listView.frame;
         [listView.superview addSubview:self];

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "UIView+LCXActionBlock.h"
 
+#define kScreenWidth UIScreen.mainScreen.bounds.size.width
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TitleSelectView : UIView

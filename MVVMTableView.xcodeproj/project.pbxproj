@@ -11,7 +11,7 @@
 		074D4AB523B0C513000125C3 /* SecondDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D4AB323B0C513000125C3 /* SecondDetailViewController.m */; };
 		074D4AB623B0C513000125C3 /* SecondDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 074D4AB423B0C513000125C3 /* SecondDetailViewController.xib */; };
 		074E700523ACA2DE00B043D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 074E700423ACA2DE00B043D1 /* AppDelegate.m */; };
-		074E700B23ACA2DE00B043D1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 074E700A23ACA2DE00B043D1 /* ViewController.m */; };
+		074E700B23ACA2DE00B043D1 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 074E700A23ACA2DE00B043D1 /* TableViewController.m */; };
 		074E700E23ACA2DE00B043D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 074E700C23ACA2DE00B043D1 /* Main.storyboard */; };
 		074E701023ACA2DF00B043D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 074E700F23ACA2DF00B043D1 /* Assets.xcassets */; };
 		074E701323ACA2DF00B043D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 074E701123ACA2DF00B043D1 /* LaunchScreen.storyboard */; };
@@ -30,6 +30,10 @@
 		07B17EBD23B4478C00AAE828 /* UIView+LCXMasonry.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B17EBC23B4478C00AAE828 /* UIView+LCXMasonry.m */; };
 		07B17EC823B4607900AAE828 /* UIScrollView+LCXRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B17EC723B4607900AAE828 /* UIScrollView+LCXRefresh.m */; };
 		07B17ED223B4C3D500AAE828 /* NSMutableArray+LCXHandleMoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B17ED123B4C3D500AAE828 /* NSMutableArray+LCXHandleMoreData.m */; };
+		07C78C8023B5EAE300AA2924 /* NSObject+LCXHandleDataNullView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C78C7F23B5EAE300AA2924 /* NSObject+LCXHandleDataNullView.m */; };
+		07C78C8323B5EF6A00AA2924 /* NSObject+LCXHandleNoNetworkView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C78C8223B5EF6A00AA2924 /* NSObject+LCXHandleNoNetworkView.m */; };
+		07C78C8623B5F30C00AA2924 /* UITableView+LCXScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C78C8523B5F30C00AA2924 /* UITableView+LCXScroll.m */; };
+		07C78C8923B5FC4100AA2924 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C78C8823B5FC4100AA2924 /* ViewController.m */; };
 		07E0A57223ACAAB400D30ADA /* LCXInitTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E0A57123ACAAB400D30ADA /* LCXInitTableView.m */; };
 		07E0A57923ACAF2A00D30ADA /* FirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E0A57823ACAF2A00D30ADA /* FirstTableViewCell.m */; };
 		07E0A57C23ACAF3B00D30ADA /* SecondTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E0A57B23ACAF3B00D30ADA /* SecondTableViewCell.m */; };
@@ -50,8 +54,8 @@
 		074E700023ACA2DE00B043D1 /* MVVMTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		074E700323ACA2DE00B043D1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		074E700423ACA2DE00B043D1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		074E700923ACA2DE00B043D1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		074E700A23ACA2DE00B043D1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		074E700923ACA2DE00B043D1 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		074E700A23ACA2DE00B043D1 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		074E700D23ACA2DE00B043D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		074E700F23ACA2DF00B043D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		074E701223ACA2DF00B043D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -83,6 +87,14 @@
 		07B17EC723B4607900AAE828 /* UIScrollView+LCXRefresh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+LCXRefresh.m"; sourceTree = "<group>"; };
 		07B17ED023B4C3D500AAE828 /* NSMutableArray+LCXHandleMoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+LCXHandleMoreData.h"; sourceTree = "<group>"; };
 		07B17ED123B4C3D500AAE828 /* NSMutableArray+LCXHandleMoreData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+LCXHandleMoreData.m"; sourceTree = "<group>"; };
+		07C78C7E23B5EAE300AA2924 /* NSObject+LCXHandleDataNullView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+LCXHandleDataNullView.h"; sourceTree = "<group>"; };
+		07C78C7F23B5EAE300AA2924 /* NSObject+LCXHandleDataNullView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LCXHandleDataNullView.m"; sourceTree = "<group>"; };
+		07C78C8123B5EF6A00AA2924 /* NSObject+LCXHandleNoNetworkView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+LCXHandleNoNetworkView.h"; sourceTree = "<group>"; };
+		07C78C8223B5EF6A00AA2924 /* NSObject+LCXHandleNoNetworkView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LCXHandleNoNetworkView.m"; sourceTree = "<group>"; };
+		07C78C8423B5F30C00AA2924 /* UITableView+LCXScroll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+LCXScroll.h"; sourceTree = "<group>"; };
+		07C78C8523B5F30C00AA2924 /* UITableView+LCXScroll.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+LCXScroll.m"; sourceTree = "<group>"; };
+		07C78C8723B5FC4100AA2924 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		07C78C8823B5FC4100AA2924 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		07E0A57023ACAAB400D30ADA /* LCXInitTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCXInitTableView.h; sourceTree = "<group>"; };
 		07E0A57123ACAAB400D30ADA /* LCXInitTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCXInitTableView.m; sourceTree = "<group>"; };
 		07E0A57723ACAF2A00D30ADA /* FirstTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstTableViewCell.h; sourceTree = "<group>"; };
@@ -148,14 +160,16 @@
 			children = (
 				074E700323ACA2DE00B043D1 /* AppDelegate.h */,
 				074E700423ACA2DE00B043D1 /* AppDelegate.m */,
-				074E700923ACA2DE00B043D1 /* ViewController.h */,
-				074E700A23ACA2DE00B043D1 /* ViewController.m */,
+				07C78C8723B5FC4100AA2924 /* ViewController.h */,
+				07C78C8823B5FC4100AA2924 /* ViewController.m */,
+				074E700923ACA2DE00B043D1 /* TableViewController.h */,
+				074E700A23ACA2DE00B043D1 /* TableViewController.m */,
 				07E0A57D23ACAF8700D30ADA /* MVVM */,
 				074E701C23ACA58300B043D1 /* LCXTableViewTool */,
 				07B154BD23B201440080ED99 /* LCXDataNull */,
 				07B154C823B21D000080ED99 /* LCXNoNetwork */,
 				07B17EC223B4593300AAE828 /* LCXRefresh */,
-				07B17ECC23B4BC7300AAE828 /* LCXReloadMoreData */,
+				07B17ECC23B4BC7300AAE828 /* LCXHandleMoreData */,
 				07B17EBA23B4476C00AAE828 /* LCXMasonry */,
 				074E700C23ACA2DE00B043D1 /* Main.storyboard */,
 				074E700F23ACA2DF00B043D1 /* Assets.xcassets */,
@@ -171,6 +185,8 @@
 			children = (
 				07E0A57023ACAAB400D30ADA /* LCXInitTableView.h */,
 				07E0A57123ACAAB400D30ADA /* LCXInitTableView.m */,
+				07C78C8423B5F30C00AA2924 /* UITableView+LCXScroll.h */,
+				07C78C8523B5F30C00AA2924 /* UITableView+LCXScroll.m */,
 				074D4A9E23B0BAB7000125C3 /* LCXTableViewCell */,
 				074E701D23ACA58300B043D1 /* LCXRegisterCellClasses */,
 			);
@@ -203,10 +219,12 @@
 			isa = PBXGroup;
 			children = (
 				07B154C523B203D20080ED99 /* noData@2x.png */,
-				07B154BF23B201770080ED99 /* NSObject+LCXDataNull.h */,
-				07B154BE23B201770080ED99 /* NSObject+LCXDataNull.m */,
+				07C78C7E23B5EAE300AA2924 /* NSObject+LCXHandleDataNullView.h */,
+				07C78C7F23B5EAE300AA2924 /* NSObject+LCXHandleDataNullView.m */,
 				07B154C123B2030F0080ED99 /* LCXDataNullView.h */,
 				07B154C223B2030F0080ED99 /* LCXDataNullView.m */,
+				07B154BF23B201770080ED99 /* NSObject+LCXDataNull.h */,
+				07B154BE23B201770080ED99 /* NSObject+LCXDataNull.m */,
 			);
 			path = LCXDataNull;
 			sourceTree = "<group>";
@@ -215,10 +233,12 @@
 			isa = PBXGroup;
 			children = (
 				07B154C423B203D20080ED99 /* noNetWork@2x.png */,
-				07B154C923B21D6B0080ED99 /* NSObject+LCXNoNetWork.h */,
-				07B154CA23B21D6B0080ED99 /* NSObject+LCXNoNetWork.m */,
+				07C78C8123B5EF6A00AA2924 /* NSObject+LCXHandleNoNetworkView.h */,
+				07C78C8223B5EF6A00AA2924 /* NSObject+LCXHandleNoNetworkView.m */,
 				07B154CC23B21FD10080ED99 /* LCXNoNetworkView.h */,
 				07B154CD23B21FD10080ED99 /* LCXNoNetworkView.m */,
+				07B154C923B21D6B0080ED99 /* NSObject+LCXNoNetWork.h */,
+				07B154CA23B21D6B0080ED99 /* NSObject+LCXNoNetWork.m */,
 			);
 			path = LCXNoNetwork;
 			sourceTree = "<group>";
@@ -241,13 +261,13 @@
 			path = LCXRefresh;
 			sourceTree = "<group>";
 		};
-		07B17ECC23B4BC7300AAE828 /* LCXReloadMoreData */ = {
+		07B17ECC23B4BC7300AAE828 /* LCXHandleMoreData */ = {
 			isa = PBXGroup;
 			children = (
 				07B17ED023B4C3D500AAE828 /* NSMutableArray+LCXHandleMoreData.h */,
 				07B17ED123B4C3D500AAE828 /* NSMutableArray+LCXHandleMoreData.m */,
 			);
-			path = LCXReloadMoreData;
+			path = LCXHandleMoreData;
 			sourceTree = "<group>";
 		};
 		07E0A57D23ACAF8700D30ADA /* MVVM */ = {
@@ -442,6 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07C78C8623B5F30C00AA2924 /* UITableView+LCXScroll.m in Sources */,
 				074E702323ACA58300B043D1 /* UIView+LCXRegisterClasses.m in Sources */,
 				07B154BC23B1F6ED0080ED99 /* TitleSelectView.m in Sources */,
 				07B154C323B2030F0080ED99 /* LCXDataNullView.m in Sources */,
@@ -449,18 +470,21 @@
 				07E0A59A23ACCE5C00D30ADA /* RequestViewModel.m in Sources */,
 				07B154C023B201770080ED99 /* NSObject+LCXDataNull.m in Sources */,
 				07B17ED223B4C3D500AAE828 /* NSMutableArray+LCXHandleMoreData.m in Sources */,
-				074E700B23ACA2DE00B043D1 /* ViewController.m in Sources */,
+				074E700B23ACA2DE00B043D1 /* TableViewController.m in Sources */,
 				07B17EBD23B4478C00AAE828 /* UIView+LCXMasonry.m in Sources */,
 				074D4AA723B0BB95000125C3 /* UIView+LCXActionBlock.m in Sources */,
 				07E0A57223ACAAB400D30ADA /* LCXInitTableView.m in Sources */,
 				07E0A59723ACC62500D30ADA /* Model.m in Sources */,
 				074E700523ACA2DE00B043D1 /* AppDelegate.m in Sources */,
+				07C78C8923B5FC4100AA2924 /* ViewController.m in Sources */,
 				07B154B823B1C0740080ED99 /* UITableView+LCXHandleActionCell.m in Sources */,
+				07C78C8323B5EF6A00AA2924 /* NSObject+LCXHandleNoNetworkView.m in Sources */,
 				07B154CB23B21D6B0080ED99 /* NSObject+LCXNoNetWork.m in Sources */,
 				074E702223ACA58300B043D1 /* UITableView+LCXRegisterCellClasses.m in Sources */,
 				07E0A59023ACBE4B00D30ADA /* DetailViewController.m in Sources */,
 				074D4AB523B0C513000125C3 /* SecondDetailViewController.m in Sources */,
 				074E701623ACA2DF00B043D1 /* main.m in Sources */,
+				07C78C8023B5EAE300AA2924 /* NSObject+LCXHandleDataNullView.m in Sources */,
 				07B17EC823B4607900AAE828 /* UIScrollView+LCXRefresh.m in Sources */,
 				07E0A57923ACAF2A00D30ADA /* FirstTableViewCell.m in Sources */,
 				07B154CE23B21FD10080ED99 /* LCXNoNetworkView.m in Sources */,

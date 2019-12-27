@@ -40,6 +40,7 @@
         _reloadBtn.titleLabel.font = [UIFont systemFontOfSize:20];
         [_reloadBtn setTitle:@"重新加载" forState:UIControlStateNormal];
         [_reloadBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_reloadBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
     }
     return self;
 }

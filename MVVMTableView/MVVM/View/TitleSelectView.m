@@ -9,7 +9,6 @@
 #import "TitleSelectView.h"
 
 #define kBaseTag 100
-#define kScreenWidth UIScreen.mainScreen.bounds.size.width
 
 @implementation TitleSelectView
 {
@@ -31,10 +30,9 @@
             [self addSubview:btn];
             [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
             btn.frame = CGRectMake(i*btnW, 0, btnW, btnH);
-            btn.backgroundColor = [UIColor orangeColor];
             btn.titleLabel.font = [UIFont systemFontOfSize:16];
             [btn setTitle:titles[i] forState:UIControlStateNormal];
-            [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [btn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
             [btn setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
             btn.tag = kBaseTag + i;
         

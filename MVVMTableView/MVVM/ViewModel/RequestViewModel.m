@@ -9,6 +9,7 @@
 #import "RequestViewModel.h"
 #import "Model.h"
 
+#define kTotalSize 15
 @implementation RequestViewModel
 
 + (RequestViewModel *)requestAndDealWithDataForPage:(NSUInteger)page{
@@ -20,13 +21,17 @@
     //viewmodel数据
     RequestViewModel *requestViewModel = [RequestViewModel new];
     requestViewModel.modelArr = modelArr;
-    requestViewModel.totalSize = 15;
+    requestViewModel.totalSize = kTotalSize;
     return requestViewModel;
 }
 
 + (NSArray *)requestDataWithPage:(NSUInteger)page{
     NSMutableArray *modelArr = @[].mutableCopy;
-    for (int i = 0; i < kPageSize; i++) {
+    
+    //服务端剩余数据量
+    NSUInteger leftDataSize = kTotalSize-kPageSize*page;
+    NSUInteger count = leftDataSize<kPageSize?leftDataSize:kPageSize;
+    for (int i = 0; i < count; i++) {
         Model *model = [Model new];
         model.province = [NSString stringWithFormat:@"%ld-广东省",page];
         model.city = @"深圳市";

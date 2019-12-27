@@ -18,12 +18,12 @@
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.contentView.backgroundColor = [UIColor lightGrayColor];
     
-    NSArray *titles = @[@"button1",@"button2"];
+    NSArray *titles = @[@"button1",@"button2",@"dissmisVC"];
     for (int i = 0; i < titles.count; i++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [self.contentView addSubview:btn];
         [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
-        btn.frame = CGRectMake(i*kScreenWidth/2, 0, kScreenWidth/2, 80);
+        btn.frame = CGRectMake(i*kScreenWidth/titles.count, 0, kScreenWidth/titles.count, 80);
         btn.backgroundColor = [UIColor lightGrayColor];
         btn.titleLabel.font = [UIFont systemFontOfSize:20];
         [btn setTitle:titles[i] forState:UIControlStateNormal];

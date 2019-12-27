@@ -14,10 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  masonry：
- 1 相对父视图，适配安全区域底部:
- 2 可调整底部、顶部偏移；
+ 1 布局相对父视图；
+ 2 适配安全区域底部:
+ 2 可调整顶部；
  */
-- (void)lcx_safeBottomWithBottom:(CGFloat)bottom top:(CGFloat)top;
+- (void)lcx_safeBottomWithTop:(CGFloat)top;
 
 @end
 

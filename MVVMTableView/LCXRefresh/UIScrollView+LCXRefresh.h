@@ -12,11 +12,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIScrollView (LCXRefresh)
 
+/**下拉加载更多*/
 @property (nonatomic ,copy) dispatch_block_t lcx_footerFreshBlock;
-
-- (void)lcx_endRefresh;
-- (void)lcx_hiddenRefresh:(BOOL)isHidden;
+- (void)lcx_endFooterRefresh;
+- (void)lcx_hiddenFooter:(BOOL)isHidden;
 - (void)lcx_noMoreData;
+
+/**上拉刷新*/
+@property (nonatomic ,copy) dispatch_block_t lcx_headerFreshBlock;
+- (void)lcx_endHeaderRefresh;
+
+/**停止刷新*/
+- (void)lcx_endRefresh;
 
 @end
 
