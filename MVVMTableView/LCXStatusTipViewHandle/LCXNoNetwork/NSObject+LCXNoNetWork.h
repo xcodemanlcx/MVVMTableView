@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LCXNoNetworkView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -1,17 +1,16 @@
 //
-//  NSObject+LCXHandleDataNullView.h
+//  NSObject+LCXDataNullViewHandle.h
 //  MVVMTableView
 //
 //  Created by lcx on 2019/12/27.
 //  Copyright © 2019 lcx. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "NSObject+LCXDataNull.h"
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSObject (LCXHandleDataNullView)
+@interface NSObject (LCXDataNullViewHandle)
 
 - (void)lcx_handleDataNullViewWithlistView:(UIView *)listView dataArr:(NSArray *)dataArr;
 

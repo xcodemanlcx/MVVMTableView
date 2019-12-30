@@ -29,10 +29,10 @@
 #import "UIScrollView+LCXRefresh.h"
 
 //数据为空
-#import "NSObject+LCXHandleDataNullView.h"
+#import "NSObject+LCXDataNullViewHandle.h"
 
 //网络异常
-#import "NSObject+LCXHandleNoNetworkView.h"
+#import "NSObject+LCXNoNetworkViewHandle.h"
 
 //使用Masonry适配
 #import "UIView+LCXMasonry.h"
