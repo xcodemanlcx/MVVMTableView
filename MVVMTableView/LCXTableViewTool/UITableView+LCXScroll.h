@@ -14,8 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UITableView (LCXScroll)
 
-//滚动到顶部
-- (void)lcx_scrollToTop;
+/**滚动到顶部:在reloadData之后使用有效*/
+- (void)lcx_scrollToTopWithPage:(NSUInteger)page;
 
 @end
 

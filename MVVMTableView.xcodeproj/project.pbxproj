@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		074ACC4523B988160064D344 /* LCXStatusTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 074ACC4423B988160064D344 /* LCXStatusTipView.m */; };
+		074ACC4E23BA057E0064D344 /* LCXMoreDataTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 074ACC4D23BA057E0064D344 /* LCXMoreDataTableVC.m */; };
 		074D4AA723B0BB95000125C3 /* UIView+LCXActionBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D4AA623B0BB95000125C3 /* UIView+LCXActionBlock.m */; };
 		074D4AB523B0C513000125C3 /* SecondDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D4AB323B0C513000125C3 /* SecondDetailViewController.m */; };
 		074D4AB623B0C513000125C3 /* SecondDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 074D4AB423B0C513000125C3 /* SecondDetailViewController.xib */; };
@@ -47,6 +48,8 @@
 /* Begin PBXFileReference section */
 		074ACC4323B988160064D344 /* LCXStatusTipView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCXStatusTipView.h; sourceTree = "<group>"; };
 		074ACC4423B988160064D344 /* LCXStatusTipView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCXStatusTipView.m; sourceTree = "<group>"; };
+		074ACC4C23BA057E0064D344 /* LCXMoreDataTableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCXMoreDataTableVC.h; sourceTree = "<group>"; };
+		074ACC4D23BA057E0064D344 /* LCXMoreDataTableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCXMoreDataTableVC.m; sourceTree = "<group>"; };
 		074D4AA523B0BB95000125C3 /* UIView+LCXActionBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+LCXActionBlock.h"; sourceTree = "<group>"; };
 		074D4AA623B0BB95000125C3 /* UIView+LCXActionBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+LCXActionBlock.m"; sourceTree = "<group>"; };
 		074D4AB223B0C513000125C3 /* SecondDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondDetailViewController.h; sourceTree = "<group>"; };
@@ -132,32 +135,8 @@
 				074ACC4B23B9AB4E0064D344 /* LCXNoNetwork */,
 				074ACC4A23B9AA090064D344 /* LCXDataNull */,
 				074ACC4923B9A9E70064D344 /* CommonTipView */,
-				074ACC4823B991630064D344 /* TipViewHandle */,
-				074ACC4723B991500064D344 /* TipView */,
-				074ACC4623B9912D0064D344 /* TipHandle */,
 			);
 			path = LCXStatusTipViewHandle;
-			sourceTree = "<group>";
-		};
-		074ACC4623B9912D0064D344 /* TipHandle */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TipHandle;
-			sourceTree = "<group>";
-		};
-		074ACC4723B991500064D344 /* TipView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TipView;
-			sourceTree = "<group>";
-		};
-		074ACC4823B991630064D344 /* TipViewHandle */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TipViewHandle;
 			sourceTree = "<group>";
 		};
 		074ACC4923B9A9E70064D344 /* CommonTipView */ = {
@@ -246,6 +225,8 @@
 		074E701C23ACA58300B043D1 /* LCXTableViewTool */ = {
 			isa = PBXGroup;
 			children = (
+				074ACC4C23BA057E0064D344 /* LCXMoreDataTableVC.h */,
+				074ACC4D23BA057E0064D344 /* LCXMoreDataTableVC.m */,
 				07E0A57023ACAAB400D30ADA /* LCXInitTableView.h */,
 				07E0A57123ACAAB400D30ADA /* LCXInitTableView.m */,
 				07C78C8423B5F30C00AA2924 /* UITableView+LCXScroll.h */,
@@ -501,6 +482,7 @@
 				074E702323ACA58300B043D1 /* UIView+LCXRegisterClasses.m in Sources */,
 				07B154BC23B1F6ED0080ED99 /* TitleSelectView.m in Sources */,
 				07E0A57C23ACAF3B00D30ADA /* SecondTableViewCell.m in Sources */,
+				074ACC4E23BA057E0064D344 /* LCXMoreDataTableVC.m in Sources */,
 				07E0A59A23ACCE5C00D30ADA /* RequestViewModel.m in Sources */,
 				07B154C023B201770080ED99 /* NSObject+LCXDataNull.m in Sources */,
 				07B17ED223B4C3D500AAE828 /* NSMutableArray+LCXHandleMoreData.m in Sources */,

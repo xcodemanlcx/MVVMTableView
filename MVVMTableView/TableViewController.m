@@ -8,12 +8,6 @@
 
 #import "TableViewController.h"
 
-//LCXTableViewTool
-#import "LCXInitTableView.h"
-#import "UITableView+LCXRegisterCellClasses.h"
-#import "LCXTableViewCell.h"
-#import "UITableView+LCXScroll.h"
-
 //MVVM
 #import "DetailViewController.h"
 #import "SecondDetailViewController.h"
@@ -22,21 +16,8 @@
 #import "SecondTableViewCell.h"
 #import "RequestViewModel.h"
 
-//加载更多-1 列表数据逻辑处理
-#import "NSMutableArray+LCXHandleMoreData.h"
-
-//加载更多-2 刷新提示UI
-#import "UIScrollView+LCXRefresh.h"
-
-//数据为空
-#import "NSObject+LCXDataNullViewHandle.h"
-
-//网络异常
-#import "NSObject+LCXNoNetworkViewHandle.h"
-
 //使用Masonry适配
 #import "UIView+LCXMasonry.h"
-
 
 #define kWeakSelf __weak typeof (self) weakSelf = self
 
@@ -52,13 +33,6 @@ typedef NS_ENUM(NSUInteger, NetworkStatus) {
 
 @interface TableViewController ()<UITableViewDelegate,UITableViewDataSource>
 
-@property (nonatomic, strong) UITableView *tableView;
-// 列表数据
-@property(nonatomic, strong) NSMutableArray *dataArr;
-// 数据总量
-@property(nonatomic, assign) NSUInteger totalSize;
-// 数据获取成功后，最新页码
-@property(nonatomic, assign) NSUInteger page;
 @property (nonatomic, strong) TitleSelectView *networkStatusSelectView;
 @property (nonatomic, strong) TitleSelectView *dataStatusSelectView;
 
@@ -83,10 +57,10 @@ typedef NS_ENUM(NSUInteger, NetworkStatus) {
     //UI
     [self networkStatusSelectView];
     [self dataStatusSelectView];
-    [self tableView];
+    [self addTableView];
     
     //初始化数据源
-    _dataArr = @[].mutableCopy;
+    self.dataArr = @[].mutableCopy;
 
     //请求列表数据
     [self titleSelectAction:ReloadDataStatusList];
@@ -102,53 +76,39 @@ typedef NS_ENUM(NSUInteger, NetworkStatus) {
     //网络状态
     BOOL isNoNetWork = _networkStatusSelectView.selectIndex;
     //停止刷新
-    [_tableView lcx_endRefresh];
+    [self.tableView lcx_endRefresh];
     if (!isNoNetWork) {
-        //数据状态
-        BOOL isDataNull = (_dataStatusSelectView.selectIndex==1);
-                if (!isDataNull) {
-                    
-        #pragma mark 一 获取处理过后的网络数据
-                    RequestViewModel *requestViewModel = [RequestViewModel requestAndDealWithDataForPage:page ];
-                    
-                    // 1 加载更多：数据逻辑处理
-                    _totalSize = requestViewModel.totalSize;
-                    [_dataArr lcx_handleMoreData:requestViewModel.modelArr nowPage:page];
-                    _page = page;
-                        
-                    //2 上拉加载提示UI
-                     if (_dataArr.count < kPageSize) {
-                         //不超过1页，隐藏提示UI
-                         [_tableView lcx_hiddenFooter:YES];
-                     }else{
-                         //超过1页，无更多数据时，显示提示UI
-                         if (_dataArr.count >= requestViewModel.totalSize) {
-                             [_tableView lcx_noMoreData];
-                         }
-                     }
-                    
-                    //3 数据不为空时，刷新列表
-                    if (_dataArr.count > 0) {
-                        [_tableView reloadData];
-                    }
-                        
-                    //4 切换列表数据时：加载首页，重置滚动到顶部
-                    if(page ==0){
-                    //滚动到顶部，在reloadData之后使用有效
-                        [_tableView lcx_scrollToTop];
-                    }
-        }else{
-            //数据为空
-            [_dataArr removeAllObjects];
-        }
         
+        #pragma mark 一 网络数据处理
+        // 1 网络数据
+        RequestViewModel *requestViewModel = [RequestViewModel requestAndDealWithDataForPage:page];
+        BOOL isDataNull = (_dataStatusSelectView.selectIndex==1);
+
+        // 2 加载更多：列表数据逻辑处理
+        [self.dataArr lcx_handleMoreData:requestViewModel.modelArr nowPage:page];
+        if (isDataNull)
+            //清空数据，模拟数据为空
+            [self.dataArr removeAllObjects];
+        
+        // 3 数据不为空的处理
+        if (self.dataArr.count > 0) {
+            // 3.1 更新页码
+            self.page = page;
+            // 3.2 上拉加载提示UI处理
+            [self handleRefreshFooterWithTotalSize:requestViewModel.totalSize pageSize:kPageSize];
+            // 3.3 刷新列表
+            [self.tableView reloadData];
+            // 3.4 滚动到顶部（切换列表数据时，加载首页，需重置到顶部）
+            [self.tableView lcx_scrollToTopWithPage:self.page];
+        }
+
         #pragma mark 二 数据为空处理
-        [self lcx_handleDataNullViewWithlistView:_tableView dataArr:_dataArr];
+        [self lcx_handleDataNullViewWithlistView:self.tableView dataArr:self.dataArr];
     }
     
     #pragma mark 三 网络异常处理
     kWeakSelf;
-    [self lcx_handleNoNetworkViewWithlistView:_tableView reloadBlock:^{
+    [self lcx_handleNoNetworkViewWithlistView:self.tableView reloadBlock:^{
         [weakSelf requestDataWithPage:page];
     } isNoNetWork:isNoNetWork];
 }
@@ -176,17 +136,16 @@ typedef NS_ENUM(NSUInteger, NetworkStatus) {
     return _dataStatusSelectView;
 }
 
-- (UITableView *)tableView{
-    if (_tableView) return _tableView;
+- (UITableView *)addTableView{
     //1 初始化
-    _tableView = AddTableView(self.view,CGRectZero, [UIColor whiteColor],self);
+    self.tableView = AddTableView(self.view,CGRectZero, [UIColor whiteColor],self);
     //2 注册cell类
-     [_tableView registerCellClasses:@[FirstTableViewCell.class,SecondTableViewCell.class]];
+     [self.tableView registerCellClasses:@[FirstTableViewCell.class,SecondTableViewCell.class]];
     //3 masonry布局适配
-    [_tableView lcx_safeBottomWithTop:88];
+    [self.tableView lcx_safeBottomWithTop:88];
     //4 加载更多
     kWeakSelf;
-    _tableView.lcx_footerFreshBlock = ^{
+    self.tableView.lcx_footerFreshBlock = ^{
         if (weakSelf.dataArr.count < weakSelf.totalSize) {
             
             //延时加载-模拟加载网络数据
@@ -196,10 +155,10 @@ typedef NS_ENUM(NSUInteger, NetworkStatus) {
         }
     };
     //5 下拉刷新
-    _tableView.lcx_headerFreshBlock = ^{
+    self.tableView.lcx_headerFreshBlock = ^{
         [weakSelf requestDataWithPage:0];
     };
-    return _tableView;
+    return self.tableView;
 }
 
 #pragma mark - Action
@@ -208,15 +167,15 @@ typedef NS_ENUM(NSUInteger, NetworkStatus) {
     
     #pragma mark 四 数据或者网络状态切换
     // 1 停止刷新
-    [_tableView lcx_endRefresh];
+    [self.tableView lcx_endRefresh];
     // 2 取消之前的网络请求
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(requestMoreData:) object:@(_page+1)];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(requestMoreData:) object:@(self.page+1)];
     // 3 网络正常时切换数据，需重置页码
     if (_networkStatusSelectView.selectIndex == NetworkStatusConnected) {
-            _page = 0;
+        self.page = 0;
     }
     // 4 请求首页网络数据
-    [self requestDataWithPage:_page];
+    [self requestDataWithPage:self.page];
 }
 
 - (void)cellAction:(NSIndexPath * _Nonnull)actionCellIndexPath actionIndex:(NSUInteger)cellActionIndex{
@@ -233,13 +192,13 @@ typedef NS_ENUM(NSUInteger, NetworkStatus) {
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return _dataArr.count;
+    return self.dataArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     //1 复用cell的id
-    NSString *cellID = _tableView.reuseCellIDs[indexPath.row%2];
+    NSString *cellID = self.tableView.reuseCellIDs[indexPath.row%2];
    
     //2 复用cell内响应事件处理
     __weak typeof (self) weakSelf = self;
@@ -248,7 +207,7 @@ typedef NS_ENUM(NSUInteger, NetworkStatus) {
     }];
     
     //3 传值
-    ((LCXTableViewCell *)cell).lcx_model = _dataArr[indexPath.row];
+    ((LCXTableViewCell *)cell).lcx_model = self.dataArr[indexPath.row];
     return cell;
 }
 

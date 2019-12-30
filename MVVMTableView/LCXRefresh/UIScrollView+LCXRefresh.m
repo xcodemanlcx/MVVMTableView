@@ -19,6 +19,7 @@
     //下拉加载
     MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
     self.mj_footer = footer;
+    footer.hidden = YES;
 
     // 闲置状态文字
     [footer setTitle:@"上拉或点击，加载更多数据"  forState:MJRefreshStateIdle];
@@ -33,6 +34,7 @@
 }
 
 - (void)lcx_hiddenFooter:(BOOL)isHidden{
+    if(self.mj_footer.hidden!=isHidden)
     self.mj_footer.hidden = isHidden;
 }
 
