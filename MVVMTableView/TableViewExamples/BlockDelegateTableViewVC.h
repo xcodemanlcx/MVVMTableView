@@ -1,5 +1,5 @@
 //
-//  DelegateTableViewVC.h
+//  BlockDelegateTableViewVC.h
 //  MVVMTableView
 //
 //  Created by lcx on 2019/12/31.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DelegateTableViewVC : UIViewController
+@interface BlockDelegateTableViewVC : UIViewController
 
 @end
 

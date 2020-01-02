@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AreaModel : NSObject
 
+@property (nonatomic ,copy) NSString *area;
+
 @end
 
 NS_ASSUME_NONNULL_END

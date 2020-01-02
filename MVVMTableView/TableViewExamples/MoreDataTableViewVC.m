@@ -51,7 +51,7 @@ typedef NS_ENUM(NSUInteger, NetworkStatus) {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = @"MVVMTableView";
+    self.title = NSStringFromClass(self.class);
     self.view.backgroundColor = [UIColor yellowColor];
 
     //UI
@@ -141,7 +141,7 @@ typedef NS_ENUM(NSUInteger, NetworkStatus) {
     //1 初始化
     self.tableView = AddTableView(self.view,CGRectZero, [UIColor whiteColor],self);
     //2 注册cell类
-     [self.tableView registerCellClasses:@[FirstTableViewCell.class,SecondTableViewCell.class]];
+     [self.tableView lcx_registerCellClasses:@[FirstTableViewCell.class,SecondTableViewCell.class]];
     //3 masonry布局适配
     [self.tableView lcx_safeBottomWithTop:88];
     //4 加载更多
@@ -198,7 +198,7 @@ typedef NS_ENUM(NSUInteger, NetworkStatus) {
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     //1 复用cell的id
-    NSString *cellID = self.tableView.reuseCellIDs[indexPath.row%2];
+    NSString *cellID = self.tableView.lcx_reuseCellIDs[indexPath.row%2];
    
     //2 复用cell内响应事件处理
     kWeakSelf;

@@ -8,7 +8,8 @@
 
 #import "ViewController.h"
 #import "MoreDataTableViewVC.h"
-#import "DelegateTableViewVC.h"
+#import "BlockDelegateTableViewVC.h"
+#import "TableViewsVC.h"
 
 @interface ViewController ()
 
@@ -24,13 +25,18 @@
 
 #pragma mark - Action
 
-- (IBAction)showDelegateTableViewAction:(id)sender {
-    [self presentVC:DelegateTableViewVC.new];
-}
-
-- (IBAction)showTableViewAction:(id)sender {
+- (IBAction)showMoreDataTableViewAction:(id)sender {
     [self presentVC:MoreDataTableViewVC.new];
 }
+
+- (IBAction)showBlockDelegateTableViewAction:(id)sender {
+    [self presentVC:BlockDelegateTableViewVC.new];
+}
+
+- (IBAction)showTableViewsAction:(id)sender {
+    [self presentVC:TableViewsVC.new];
+}
+
 
 - (void)presentVC:(UIViewController *)viewController{
     UINavigationController *navigationVC = [[UINavigationController alloc] initWithRootViewController:viewController];

@@ -12,9 +12,9 @@
 
 @implementation UITableView (LCXRegisterCellClasses)
 
-@dynamic reuseCellIDs;
+@dynamic lcx_reuseCellIDs;
 
-- (NSMutableArray<__kindof NSString *> *)reuseCellIDs{
+- (NSMutableArray<__kindof NSString *> *)lcx_reuseCellIDs{
     id mArr = objc_getAssociatedObject(self, _cmd);
     if (!mArr) {
         mArr = @[].mutableCopy;
@@ -23,12 +23,11 @@
     return mArr;
 }
 
-- (void)registerCellClasses:(NSArray <Class> *)classes{
+- (void)lcx_registerCellClasses:(NSArray <Class> *)classes{
     __weak typeof(self) weakSelf = self;
     [self registerClasses:classes registerBlock:^(Class  _Nonnull __unsafe_unretained cls, NSString * _Nonnull reuseCellID) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf.reuseCellIDs addObject:reuseCellID];
-        [strongSelf registerClass:cls forCellReuseIdentifier:reuseCellID];
+        [weakSelf.lcx_reuseCellIDs addObject:reuseCellID];
+        [weakSelf registerClass:cls forCellReuseIdentifier:reuseCellID];
     }];
 }
 

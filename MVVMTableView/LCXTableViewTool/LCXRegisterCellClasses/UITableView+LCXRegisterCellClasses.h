@@ -15,12 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  复用UITableViewCell的所有id
  */
-@property (nonatomic, strong, readonly) NSMutableArray <__kindof NSString *> *reuseCellIDs;
+@property (nonatomic, strong, readonly) NSMutableArray <__kindof NSString *> *lcx_reuseCellIDs;
 
 /**
  注册UITableViewCell的需要复用cell类型
  */
-- (void)registerCellClasses:(NSArray <Class> *)classes;
+- (void)lcx_registerCellClasses:(NSArray <Class> *)classes;
 
 @end
 

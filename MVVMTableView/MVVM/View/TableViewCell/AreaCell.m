@@ -10,6 +10,21 @@
 
 @implementation AreaCell
 
+- (void)initCell{
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.contentView.backgroundColor = [UIColor whiteColor];
+    
+    CGFloat labWidth = UIScreen.mainScreen.bounds.size.width/3;
+    _areaLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, labWidth , 40)];
+    [self.contentView addSubview:_areaLab];
+    _areaLab.textColor = [UIColor blackColor];
+    _areaLab.textAlignment = NSTextAlignmentCenter;
+
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 39, labWidth, 1)];
+    [self.contentView addSubview:lineView];
+    lineView.backgroundColor = [UIColor blackColor];
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code

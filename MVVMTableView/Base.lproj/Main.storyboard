@@ -16,22 +16,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLw-Tx-E4v">
+                                <rect key="frame" x="53" y="343" width="309" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="BlockDelegateTableView"/>
+                                <connections>
+                                    <action selector="showBlockDelegateTableViewAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oNy-1x-iwF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LnF-DS-pDm">
+                                <rect key="frame" x="89" y="453" width="237" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="TableViews"/>
+                                <connections>
+                                    <action selector="showTableViewsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="26F-Gz-Xtu"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aj8-pZ-esn">
-                                <rect key="frame" x="89" y="357" width="237" height="66"/>
+                                <rect key="frame" x="89" y="243" width="237" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="MoreDataTableView"/>
                                 <connections>
-                                    <action selector="showTableViewAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o96-jh-lM9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLw-Tx-E4v">
-                                <rect key="frame" x="89" y="222" width="237" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="DelegateTableView"/>
-                                <connections>
-                                    <action selector="showDelegateTableViewAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FAr-pM-Em0"/>
+                                    <action selector="showMoreDataTableViewAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ie5-Vn-Rc5"/>
                                 </connections>
                             </button>
                         </subviews>

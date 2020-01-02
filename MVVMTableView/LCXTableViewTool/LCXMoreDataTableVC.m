@@ -25,8 +25,8 @@
         //不超过1页，隐藏提示UI
         [self.tableView lcx_hiddenFooter:YES];
     }else{
+        //超过1页，无更多数据时，显示提示UI与设置状态
         [self.tableView lcx_hiddenFooter:NO];
-        //超过1页，无更多数据时，显示提示UI
         if (self.dataArr.count >= self.totalSize) {
             [self.tableView lcx_noMoreData];
         }

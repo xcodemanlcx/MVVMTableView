@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AreaCell : LCXTableViewCell
 
+@property (nonatomic ,strong) UILabel *areaLab;
+
 @end
 
 NS_ASSUME_NONNULL_END
