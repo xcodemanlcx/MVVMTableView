@@ -10,6 +10,7 @@
 #import "ViewModel.h"
 
 #define kBaseTag 100
+#define kScreenWidth UIScreen.mainScreen.bounds.size.width
 
 @implementation FirstTableViewCell
 
