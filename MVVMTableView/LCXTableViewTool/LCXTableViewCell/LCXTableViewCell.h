@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LCXTableViewCell : UITableViewCell
 
-@property (nonatomic ,strong) id lcx_model;
+@property (nonatomic ,strong) id model;
 
 - (void)initCell;
 

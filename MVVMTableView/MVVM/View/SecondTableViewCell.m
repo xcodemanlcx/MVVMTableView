@@ -23,11 +23,11 @@
     _addressLab.textColor = [UIColor blackColor];
 }
 
-- (void)setLcx_model:(id)lcx_model{
-    if (!lcx_model||![lcx_model isKindOfClass:ViewModel.class]) return;
-    ViewModel *model = (ViewModel *)lcx_model;
+- (void)setModel:(id)model{
+    if (!model||![model isKindOfClass:ViewModel.class]) return;
+    ViewModel *viewModel = (ViewModel *)model;
     
-    _addressLab.text = model.address;
+    _addressLab.text = viewModel.address;
 }
 
 - (void)awakeFromNib {

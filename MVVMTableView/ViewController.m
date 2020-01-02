@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-#import "TableViewController.h"
+#import "MoreDataTableViewVC.h"
+#import "DelegateTableViewVC.h"
 
 @interface ViewController ()
 
@@ -21,8 +22,18 @@
     self.view.backgroundColor = [UIColor whiteColor];
 }
 
+#pragma mark - Action
+
+- (IBAction)showDelegateTableViewAction:(id)sender {
+    [self presentVC:DelegateTableViewVC.new];
+}
+
 - (IBAction)showTableViewAction:(id)sender {
-    UINavigationController *navigationVC = [[UINavigationController alloc] initWithRootViewController:TableViewController.new];
+    [self presentVC:MoreDataTableViewVC.new];
+}
+
+- (void)presentVC:(UIViewController *)viewController{
+    UINavigationController *navigationVC = [[UINavigationController alloc] initWithRootViewController:viewController];
     navigationVC.navigationBar.translucent = NO;
     navigationVC.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:navigationVC animated:YES completion:nil];

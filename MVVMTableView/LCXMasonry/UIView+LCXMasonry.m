@@ -19,12 +19,12 @@
         [self makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.equalTo(self.superview);
             make.top.equalTo(self.superview).offset(top);
-            [self lcx_mas_setSafeBottomWithOffset:0 make:make];
+            [self lcx_make_setSafeBottomWithOffset:0 make:make];
         }];
     }
 }
 
-- (void)lcx_mas_setSafeBottomWithOffset:(CGFloat)bottomOffset make:(MASConstraintMaker *)make{
+- (void)lcx_make_setSafeBottomWithOffset:(CGFloat)bottomOffset make:(MASConstraintMaker *)make{
     if (@available(iOS 11.0, *)) {
         make.bottom.equalTo(self.superview.safeAreaLayoutGuideBottom).offset(-bottomOffset);
     } else {

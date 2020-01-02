@@ -1,5 +1,5 @@
 //
-//  TableViewController.h
+//  MoreDataTableViewVC.h
 //  MVVMTableView
 //
 //  Created by lcx on 2019/12/20.
@@ -8,7 +8,7 @@
 
 #import "LCXMoreDataTableVC.h"
 
-@interface TableViewController : LCXMoreDataTableVC
+@interface MoreDataTableViewVC : LCXMoreDataTableVC
 
 
 @end

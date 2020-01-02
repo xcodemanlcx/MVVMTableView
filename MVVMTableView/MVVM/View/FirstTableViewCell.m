@@ -10,20 +10,20 @@
 #import "ViewModel.h"
 
 #define kBaseTag 100
-#define kScreenWidth UIScreen.mainScreen.bounds.size.width
 
 @implementation FirstTableViewCell
 
 - (void)initCell{
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    self.contentView.backgroundColor = [UIColor lightGrayColor];
+    self.contentView.backgroundColor = [UIColor whiteColor];
     
     NSArray *titles = @[@"button1",@"button2",@"dissmisVC"];
+    CGFloat btnW = kScreenWidth/(titles.count + 1);
     for (int i = 0; i < titles.count; i++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [self.contentView addSubview:btn];
         [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
-        btn.frame = CGRectMake(i*kScreenWidth/titles.count, 0, kScreenWidth/titles.count, 80);
+        btn.frame = CGRectMake(20+i*(20+btnW), 20, btnW, 40);
         btn.backgroundColor = [UIColor lightGrayColor];
         btn.titleLabel.font = [UIFont systemFontOfSize:20];
         [btn setTitle:titles[i] forState:UIControlStateNormal];

@@ -1,12 +1,12 @@
 //
-//  TableViewController.m
+//  MoreDataTableViewVC.m
 //  MVVMTableView
 //
 //  Created by lcx on 2019/12/20.
 //  Copyright © 2019 lcx. All rights reserved.
 //
 
-#import "TableViewController.h"
+#import "MoreDataTableViewVC.h"
 
 //MVVM
 #import "DetailViewController.h"
@@ -31,14 +31,14 @@ typedef NS_ENUM(NSUInteger, NetworkStatus) {
     NetworkStatusDisconnected,//无网络
 };
 
-@interface TableViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface MoreDataTableViewVC ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) TitleSelectView *networkStatusSelectView;
 @property (nonatomic, strong) TitleSelectView *dataStatusSelectView;
 
 @end
 
-@implementation TableViewController
+@implementation MoreDataTableViewVC
 
 #pragma mark - Life cycle
 
@@ -136,7 +136,8 @@ typedef NS_ENUM(NSUInteger, NetworkStatus) {
     return _dataStatusSelectView;
 }
 
-- (UITableView *)addTableView{
+- (void)addTableView{
+    if(self.tableView) return;
     //1 初始化
     self.tableView = AddTableView(self.view,CGRectZero, [UIColor whiteColor],self);
     //2 注册cell类
@@ -158,7 +159,6 @@ typedef NS_ENUM(NSUInteger, NetworkStatus) {
     self.tableView.lcx_headerFreshBlock = ^{
         [weakSelf requestDataWithPage:0];
     };
-    return self.tableView;
 }
 
 #pragma mark - Action
@@ -201,13 +201,13 @@ typedef NS_ENUM(NSUInteger, NetworkStatus) {
     NSString *cellID = self.tableView.reuseCellIDs[indexPath.row%2];
    
     //2 复用cell内响应事件处理
-    __weak typeof (self) weakSelf = self;
+    kWeakSelf;
     UITableViewCell *cell = [tableView reuseCellID:cellID cellActionBlock:^(NSIndexPath * _Nonnull actionCellIndexPath, NSInteger cellActionIndex) {
         [weakSelf cellAction:actionCellIndexPath actionIndex:cellActionIndex];
     }];
     
     //3 传值
-    ((LCXTableViewCell *)cell).lcx_model = self.dataArr[indexPath.row];
+    ((LCXTableViewCell *)cell).model = self.dataArr[indexPath.row];
     return cell;
 }
 
