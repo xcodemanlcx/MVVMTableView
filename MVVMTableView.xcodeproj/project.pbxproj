@@ -153,8 +153,6 @@
 			children = (
 				07430C9323BDED000069C88C /* LCXTableBlockDelegate.h */,
 				07430C9423BDED000069C88C /* LCXTableBlockDelegate.m */,
-				07B30E0F23BD98AA008348E6 /* UIView+LCXDataArray.h */,
-				07B30E1023BD98AA008348E6 /* UIView+LCXDataArray.m */,
 			);
 			path = LCXTableBlockDelegate;
 			sourceTree = "<group>";
@@ -254,6 +252,8 @@
 				074ACC4D23BA057E0064D344 /* LCXMoreDataTableVC.m */,
 				07E0A57023ACAAB400D30ADA /* LCXInitTableView.h */,
 				07E0A57123ACAAB400D30ADA /* LCXInitTableView.m */,
+				07B30E0F23BD98AA008348E6 /* UIView+LCXDataArray.h */,
+				07B30E1023BD98AA008348E6 /* UIView+LCXDataArray.m */,
 				07C78C8423B5F30C00AA2924 /* UITableView+LCXScroll.h */,
 				07C78C8523B5F30C00AA2924 /* UITableView+LCXScroll.m */,
 				07430C9223BDEC920069C88C /* LCXTableBlockDelegate */,
