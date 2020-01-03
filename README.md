@@ -39,5 +39,5 @@
 * #import "LCXTableViewCell.h"：可作为自定义Cell的父类，处理自定义UI、刷新model方法、响应cell的点击事件非常方便,快速自定义Cell；
 
 ## UIView通用工具
-#import "UIView+LCXActionBlock.h"：扩展block属性，方便回调；
-#import "UIView+LCXRegisterClasses.h"：批量注册可复用的UIView类，比如UITableViewCell、UICollectionViewCell；
+* #import "UIView+LCXActionBlock.h"：扩展block属性，方便回调；
+* #import "UIView+LCXRegisterClasses.h"：批量注册可复用的UIView类，比如UITableViewCell、UICollectionViewCell；
