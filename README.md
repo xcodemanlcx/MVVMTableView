@@ -1,7 +1,11 @@
 [TOC]
 
-# MVVMTableView中的组件工具：
-* 解耦实现多个一行代码功能处理：无网络提示UI处理，数据为空提示UI处理，上拉加载与下拉刷新（基于MJRefresh），TableView、TableViewCell的组件工具
+# MVVMTableView：解耦实现多个一行代码处理组件
+* 有无网络提示UI；
+* 有无数据提示UI；
+* 上拉刷新与下拉加载；
+* UITableView的初始化、注册复用cell（免命名复用cell的id）、布局适配、cell中响应事件处理；
+* 快速自定义UITableViewCell；
 
 # 思路
 * 解耦：UI与逻辑分离；
