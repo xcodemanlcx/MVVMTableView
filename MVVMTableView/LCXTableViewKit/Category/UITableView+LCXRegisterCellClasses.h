@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  注册UITableViewCell的需要复用cell类型
  */
-- (void)lcx_registerCellClasses:(NSArray <Class> *)classes;
+- (void)lcx_registerCellClasses:(NSArray <__kindof Class> *)classes;
 
 @end
 

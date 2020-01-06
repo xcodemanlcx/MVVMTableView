@@ -23,9 +23,9 @@
     _addressLab.textColor = [UIColor blackColor];
 }
 
-- (void)setModel:(id)model{
-    if (!model||![model isKindOfClass:ViewModel.class]) return;
-    ViewModel *viewModel = (ViewModel *)model;
+- (void)setCellModel:(id)cellModel{
+    if (!cellModel||![cellModel isKindOfClass:ViewModel.class]) return;
+    ViewModel *viewModel = (ViewModel *)cellModel;
     
     _addressLab.text = viewModel.address;
 }

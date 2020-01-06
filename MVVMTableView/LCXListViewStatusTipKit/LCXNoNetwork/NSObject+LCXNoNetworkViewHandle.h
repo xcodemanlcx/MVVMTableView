@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSObject (LCXNoNetworkViewHandle)
 
-- (void)lcx_handleNoNetworkViewWithlistView:(UIView *)listView reloadBlock:(dispatch_block_t)reloadBlock isNoNetWork:(BOOL)isNoNetWork;
+- (void)lcx_handleNoNetworkViewWithStyleSel:(SEL)styleSel listView:(UIView *)listView reloadBlock:(dispatch_block_t)reloadBlock isNoNetWork:(BOOL)isNoNetWork;
 
 @end
 

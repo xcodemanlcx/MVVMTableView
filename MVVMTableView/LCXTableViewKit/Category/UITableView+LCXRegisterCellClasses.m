@@ -7,7 +7,6 @@
 //
 
 #import "UITableView+LCXRegisterCellClasses.h"
-#import "UIView+LCXRegisterClasses.h"
 #import <objc/runtime.h>
 
 @implementation UITableView (LCXRegisterCellClasses)
@@ -23,12 +22,15 @@
     return mArr;
 }
 
-- (void)lcx_registerCellClasses:(NSArray <Class> *)classes{
-    __weak typeof(self) weakSelf = self;
-    [self registerClasses:classes registerBlock:^(Class  _Nonnull __unsafe_unretained cls, NSString * _Nonnull reuseCellID) {
-        [weakSelf.lcx_reuseCellIDs addObject:reuseCellID];
-        [weakSelf registerClass:cls forCellReuseIdentifier:reuseCellID];
-    }];
+- (void)lcx_registerCellClasses:(NSArray <__kindof Class> *)classes{
+    if (!classes || ![classes isKindOfClass:NSArray.class]) return;
+    for (NSUInteger i = 0; i<classes.count ; i++) {
+        //注册类复用id
+        NSString *reuseCellID = NSStringFromClass(classes[i]);
+        [self.lcx_reuseCellIDs addObject:reuseCellID];
+        //注册类
+        [self registerClass:classes[i] forCellReuseIdentifier:reuseCellID];
+    }
 }
 
 @end

@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSObject (LCXDataNullViewHandle)
 
-- (void)lcx_handleDataNullViewWithlistView:(UIView *)listView dataArr:(NSArray *)dataArr;
+- (void)lcx_handleDataNullViewWithStyleSel:(SEL)styleSel listView:(UIView *)listView dataArr:(NSArray *)dataArr;
 
 @end
 

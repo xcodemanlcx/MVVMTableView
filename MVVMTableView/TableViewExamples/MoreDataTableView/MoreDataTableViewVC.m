@@ -16,6 +16,8 @@
 #import "SecondTableViewCell.h"
 #import "RequestViewModel.h"
 
+
+
 //使用Masonry适配
 #import "UIView+LCXMasonry.h"
 
@@ -103,12 +105,12 @@ typedef NS_ENUM(NSUInteger, NetworkStatus) {
         }
 
         #pragma mark 二 数据为空处理
-        [self lcx_handleDataNullViewWithlistView:self.tableView dataArr:self.dataArr];
+        [self lcx_handleDataNullViewWithStyleSel:@selector(styleDefault) listView:self.tableView dataArr:self.dataArr];
     }
     
     #pragma mark 三 网络异常处理
     kWeakSelf;
-    [self lcx_handleNoNetworkViewWithlistView:self.tableView reloadBlock:^{
+    [self lcx_handleNoNetworkViewWithStyleSel:@selector(styleDefault) listView:self.tableView reloadBlock:^{
         [weakSelf requestDataWithPage:page];
     } isNoNetWork:isNoNetWork];
 }
@@ -174,6 +176,7 @@ typedef NS_ENUM(NSUInteger, NetworkStatus) {
     if (_networkStatusSelectView.selectIndex == NetworkStatusConnected) {
         self.page = 0;
     }
+    
     // 4 请求首页网络数据
     [self requestDataWithPage:self.page];
 }
@@ -207,7 +210,7 @@ typedef NS_ENUM(NSUInteger, NetworkStatus) {
     }];
     
     //3 传值
-    ((LCXTableViewCell *)cell).model = self.dataArr[indexPath.row];
+    ((LCXTableViewCell *)cell).cellModel = self.dataArr[indexPath.row];
     return cell;
 }
 

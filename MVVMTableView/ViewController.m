@@ -10,6 +10,7 @@
 #import "MoreDataTableViewVC.h"
 #import "BlockDelegateTableViewVC.h"
 #import "TableViewsVC.h"
+#import "DoubleDelegateTableViewVC.h"
 
 @interface ViewController ()
 
@@ -37,6 +38,9 @@
     [self presentVC:TableViewsVC.new];
 }
 
+- (IBAction)showDoubleDelegateTableViewAction:(id)sender {
+    [self presentVC:DoubleDelegateTableViewVC.new];
+}
 
 - (void)presentVC:(UIViewController *)viewController{
     UINavigationController *navigationVC = [[UINavigationController alloc] initWithRootViewController:viewController];

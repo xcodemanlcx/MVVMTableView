@@ -10,13 +10,13 @@
 
 @implementation LCXInitTableView
 
-UITableView *AddTableView(UIView *superView, CGRect frame, UIColor *backgroundColor,id doubleDelegate){
+UITableView *AddTableView(UIView *superView,CGRect frame, UIColor *backgroundColor,id doubleDelegate){
     UITableView *tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
     [superView addSubview:tableView];
     tableView.backgroundColor = backgroundColor;
     tableView.dataSource = doubleDelegate;
     tableView.delegate = doubleDelegate;
-    
+
     //app base settting
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.showsVerticalScrollIndicator = NO;

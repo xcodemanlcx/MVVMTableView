@@ -20,13 +20,17 @@
 }
 
 - (void)handleRefreshFooterWithTotalSize:(NSUInteger)totalSize pageSize:(NSUInteger)pageSize{
+    if (self.dataArr.count == 0) return;
+    // 1 缓存数据总量
     self.totalSize = totalSize;
+    // 2 数据不为空，显示上拉提示UI
+    [self.tableView lcx_hiddenFooter:NO];
+    // 3 上拉提示，更改状态
     if (self.dataArr.count < pageSize) {
-        //不超过1页，隐藏提示UI
-        [self.tableView lcx_hiddenFooter:YES];
+        //数据总量不超过1页
+        [self.tableView lcx_noMoreData];
     }else{
-        //超过1页，无更多数据时，显示提示UI与设置状态
-        [self.tableView lcx_hiddenFooter:NO];
+        //数据总量超过1页
         if (self.dataArr.count >= self.totalSize) {
             [self.tableView lcx_noMoreData];
         }

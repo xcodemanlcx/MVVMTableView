@@ -8,13 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "UIView+LCXActionBlock.h"
-#import "UITableView+LCXHandleActionCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LCXTableViewCell : UITableViewCell
 
-@property (nonatomic ,strong) id model;
+@property (nonatomic ,strong) id cellModel;
 
 - (void)initCell;
 

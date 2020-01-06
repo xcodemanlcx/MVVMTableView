@@ -26,7 +26,8 @@
     //刷新状态文字
     [footer setTitle:@"正在加载" forState:MJRefreshStateRefreshing];
     //没有更多数据了
-    [footer setTitle:@"已经到底了" forState:MJRefreshStateNoMoreData];
+    [footer setTitle:@"—————— 已经到底了 ——————" forState:MJRefreshStateNoMoreData];
+    footer.stateLabel.textColor = [UIColor lightGrayColor];
 }
 
 - (void)lcx_endFooterRefresh{

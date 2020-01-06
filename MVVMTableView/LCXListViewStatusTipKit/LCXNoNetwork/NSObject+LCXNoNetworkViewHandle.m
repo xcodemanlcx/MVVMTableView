@@ -7,17 +7,24 @@
 //
 
 #import "NSObject+LCXNoNetworkViewHandle.h"
-#import "LCXNoNetworkView.h"
 #import "NSObject+LCXNoNetWork.h"
+#import "LCXNoNetworkView.h"
 
 @implementation NSObject (LCXNoNetworkViewHandle)
 
-- (void)lcx_handleNoNetworkViewWithlistView:(UIView *)listView reloadBlock:(dispatch_block_t)reloadBlock isNoNetWork:(BOOL)isNoNetWork{
+- (void)lcx_handleNoNetworkViewWithStyleSel:(SEL)styleSel listView:(UIView *)listView reloadBlock:(dispatch_block_t)reloadBlock isNoNetWork:(BOOL)isNoNetWork {
     [self lcx_customNoNetWorkViewBlock:^UIView *_Nonnull{
         //自定义UI
         LCXNoNetworkView *noNetworkView = [[LCXNoNetworkView alloc] initWithListView:listView];
         noNetworkView.reloadBlock = reloadBlock;
-    return noNetworkView;
+        //执行自定义UI样式方法
+        if ([noNetworkView respondsToSelector:styleSel]) {
+            #pragma clang diagnostic push
+            #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+            [noNetworkView performSelector:styleSel];
+            #pragma clang diagnostic pop
+        }
+        return noNetworkView;
     } isNoNetWork:isNoNetWork];
 }
 

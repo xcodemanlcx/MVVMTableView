@@ -23,7 +23,8 @@
         //数据为空
         if (!self.lcx_customDataNullView) {
             //自定义UI
-            if (customDataNullViewBlock) {                  self.lcx_customDataNullView = customDataNullViewBlock();
+            if (customDataNullViewBlock) {
+                self.lcx_customDataNullView = customDataNullViewBlock();
             }
         }else{
             [self.lcx_customDataNullView.superview bringSubviewToFront:self.lcx_customDataNullView];
