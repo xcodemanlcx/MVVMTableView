@@ -14,7 +14,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- 适用：单分区，cell样式任意个；
+ 适用：单分区，cell样式任意多个；
  */
 
 @interface LCXTableDoubleDelegate : NSObject<UITableViewDelegate,UITableViewDataSource>

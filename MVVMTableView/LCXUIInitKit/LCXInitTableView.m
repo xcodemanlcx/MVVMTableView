@@ -8,8 +8,6 @@
 
 #import "LCXInitTableView.h"
 
-@implementation LCXInitTableView
-
 UITableView *AddTableView(UIView *superView,CGRect frame, UIColor *backgroundColor,id doubleDelegate){
     UITableView *tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
     [superView addSubview:tableView];
@@ -21,8 +19,5 @@ UITableView *AddTableView(UIView *superView,CGRect frame, UIColor *backgroundCol
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.showsVerticalScrollIndicator = NO;
     tableView.backgroundView = nil;
-
     return tableView;
 }
-
-@end

@@ -6,9 +6,9 @@
 //  Copyright © 2019 lcx. All rights reserved.
 //
 
-#import "LCXMoreDataTableVC.h"
+#import <UIKit/UIKit.h>
 
-@interface MoreDataTableViewVC : LCXMoreDataTableVC
+@interface MoreDataTableViewVC : UIViewController
 
 
 @end

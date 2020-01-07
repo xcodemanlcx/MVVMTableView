@@ -9,7 +9,7 @@
 #import "RequestViewModel.h"
 #import "Model.h"
 
-#define kTotalSize 8
+#define kTotalSize 16
 @implementation RequestViewModel
 
 + (RequestViewModel *)requestAndDealWithDataForPage:(NSUInteger)page{

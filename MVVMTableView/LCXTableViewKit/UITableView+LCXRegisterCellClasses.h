@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) NSMutableArray <__kindof NSString *> *lcx_reuseCellIDs;
 
 /**
- 注册UITableViewCell的需要复用cell类型
+ // 注册cell（免命名复用cell的id）
  */
 - (void)lcx_registerCellClasses:(NSArray <__kindof Class> *)classes;
 

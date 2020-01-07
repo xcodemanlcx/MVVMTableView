@@ -12,6 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSMutableArray (LCXHandleMoreData)
 
+/**
+*  @brief  列表页面：数据源处理分页数据
+*
+*  @param arr    网络数据
+*  @param nowPage   当前加载页码
+*
+*  @return void
+*/
 - (void)lcx_handleMoreData:(NSArray *)arr nowPage:(NSInteger)nowPage;
 
 @end

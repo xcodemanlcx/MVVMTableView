@@ -84,15 +84,9 @@
         return 40;
     };
     _tableBlockDelegate.didSelectRowAtIndexPathBlock = ^(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
-        [weakSelf actionForTableView:tableView didSelectRowAtIndexPath:indexPath];
+        [weakSelf dismissViewControllerAnimated:YES completion:nil];
     };
     return _tableBlockDelegate;
-}
-
-#pragma mark - Action: tableBlockDelegate
-
-- (void)actionForTableView:(UITableView * _Nonnull )tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath{
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*

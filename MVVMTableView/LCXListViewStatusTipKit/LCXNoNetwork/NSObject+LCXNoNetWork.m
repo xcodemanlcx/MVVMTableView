@@ -19,7 +19,6 @@
             if (customNoNetWorkViewBlock) {
                self.lcx_noNetworkView = customNoNetWorkViewBlock();
             }
-
         }else{
             [self.lcx_noNetworkView.superview bringSubviewToFront:self.lcx_noNetworkView];
         }

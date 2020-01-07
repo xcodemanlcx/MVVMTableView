@@ -102,4 +102,16 @@
     [self.mj_footer endRefreshing];
 }
 
+#pragma mark - 上拉提示UI处理
+
+- (void)lcx_handleRefreshFooterWithDataArr:(NSArray *)dataArr totalSize:(NSUInteger)totalSize{
+    if (dataArr.count == 0) return;
+    // 1 数据不为空，显示上拉提示UI
+    [self lcx_hiddenFooter:NO];
+    //2 数据总量,1页以上(含1页)：上拉提示，更改状态
+    if (dataArr.count >= totalSize){
+        [self lcx_noMoreData];
+    }
+}
+
 @end

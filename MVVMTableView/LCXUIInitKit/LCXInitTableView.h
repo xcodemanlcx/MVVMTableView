@@ -10,10 +10,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LCXInitTableView : NSObject
-
 UITableView *AddTableView(UIView *superView, CGRect frame, UIColor *backgroundColor,id doubleDelegate);
-
-@end
 
 NS_ASSUME_NONNULL_END

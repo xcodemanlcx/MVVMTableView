@@ -25,6 +25,10 @@ NS_ASSUME_NONNULL_BEGIN
 /**停止刷新*/
 - (void)lcx_endRefresh;
 
+#pragma mark - 上拉提示UI处理
+
+- (void)lcx_handleRefreshFooterWithDataArr:(NSArray *)dataArr totalSize:(NSUInteger)totalSize;
+
 @end
 
 NS_ASSUME_NONNULL_END
