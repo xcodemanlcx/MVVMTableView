@@ -1,4 +1,4 @@
-# MVVMTableView：解耦实现多个一行代码处理组件
+# MVVMTableView（MoreDataTableView）：解耦实现多个一行代码处理组件
 * 有无网络提示UI；
 * 有无数据提示UI；
 * 上拉刷新与下拉加载；
@@ -19,12 +19,12 @@
 
 ## 一行代码：处理无网络UI
 * #import "NSObject+LCXNoNetWork.h"：无网络UI逻辑（结合了自定义UI）；
-* #import "LCXNoNetworkView.h"：自定义UI逻辑；
+* #import "NSObject+LCXNoNetWork.h"：自定义UI逻辑；
 * #import "LCXNoNetworkView.h"：自定义UI；
 
 ## 一行代码：实现MJRefresh的上拉加载，或下拉刷新,或加载更多-数组逻辑
 * #import "UIScrollView+LCXRefresh.h"：实现MJRefresh的上拉加载，或下拉刷新
-* #import "NSMutableArray+LCXHandleMoreData.h"：加载更多-数组逻辑
+* #import "NSMutableArray+LCXHandleMoreData.h"：加载更多-数据源逻辑处理
 
 ##  UITableView工具
 ### 一行代码：TableView初始化
@@ -43,5 +43,4 @@
 
 ## UIView通用工具
 * #import "UIView+LCXActionBlock.h"：扩展block属性，方便回调；
-* #import "UIView+LCXRegisterClasses.h"：批量注册可复用的UIView类，比如UITableViewCell、UICollectionViewCell；
 
