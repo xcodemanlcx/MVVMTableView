@@ -10,7 +10,7 @@
 
 @implementation UITableView (LCXHandleActionCell)
 
-- (UITableViewCell *)reuseCellID:(NSString *)reuseCellID cellActionBlock:(LCXCellActionBlock)cellActionBlock{
+- (UITableViewCell *)lcx_reuseCellID:(NSString *)reuseCellID cellActionBlock:(LCXCellActionBlock)cellActionBlock{
     
     UITableViewCell *cell = [self dequeueReusableCellWithIdentifier:reuseCellID];
     

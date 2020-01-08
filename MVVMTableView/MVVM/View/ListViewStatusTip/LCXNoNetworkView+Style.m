@@ -32,7 +32,7 @@
     //重新加载
      UIButton *reloadBtn = [UIButton buttonWithType:UIButtonTypeCustom];
      [self addSubview:reloadBtn];
-     [reloadBtn addTarget:self action:@selector(reloadBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+     [reloadBtn addTarget:self action:LCXNoNetworkView_SEL_reloadBtnAction forControlEvents:UIControlEventTouchUpInside];
      reloadBtn.frame = CGRectMake((self.frame.size.width-100)/2, tipLab.frame.origin.y + self.tipLab.frame.size.height + 20, 100, 40);
      reloadBtn.backgroundColor = [UIColor lightGrayColor];
      reloadBtn.titleLabel.font = [UIFont systemFontOfSize:20];
@@ -42,12 +42,5 @@
     self.reloadBtn = reloadBtn;
 }
 
-#pragma mark - Action
-
-- (void)reloadBtnAction:(UIButton *)sender{
-    if (self.reloadBlock) {
-        self.reloadBlock();
-    }
-}
 
 @end

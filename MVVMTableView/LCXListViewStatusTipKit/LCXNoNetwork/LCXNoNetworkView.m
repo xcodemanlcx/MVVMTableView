@@ -21,7 +21,13 @@
     return self;
 }
 
+#pragma mark - Action
 
+- (void)reloadBtnAction:(UIButton *)sender{
+    if (self.reloadBlock) {
+        self.reloadBlock();
+    }
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

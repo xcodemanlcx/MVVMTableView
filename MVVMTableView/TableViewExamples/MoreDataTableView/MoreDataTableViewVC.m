@@ -219,7 +219,7 @@ typedef NS_ENUM(NSUInteger, NetworkStatus) {
     NSString *cellID = _tableView.lcx_reuseCellIDs[indexPath.row%2];
     //2 复用cell内响应事件处理
     kWeakSelf;
-    UITableViewCell *cell = [tableView reuseCellID:cellID cellActionBlock:^(NSIndexPath * _Nonnull actionCellIndexPath, NSInteger cellActionIndex) {
+    UITableViewCell *cell = [tableView lcx_reuseCellID:cellID cellActionBlock:^(NSIndexPath * _Nonnull actionCellIndexPath, NSInteger cellActionIndex) {
         [weakSelf cellAction:actionCellIndexPath actionIndex:cellActionIndex];
     }];
     //3 传值

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "NSObject+LCXNoNetworkViewHandle.h"
 
+#define LCXNoNetworkView_SEL_reloadBtnAction @selector(reloadBtnAction:)
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LCXNoNetworkView : UIView
@@ -19,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic ,copy) dispatch_block_t reloadBlock;
 
 - (instancetype)initWithListView:(UIView *)listView;
+- (void)reloadBtnAction:(UIButton *)sender;
 
 @end
 

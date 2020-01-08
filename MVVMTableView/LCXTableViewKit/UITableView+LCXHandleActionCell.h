@@ -18,7 +18,7 @@ typedef void(^LCXCellActionBlock)(NSIndexPath *actionCellIndexPath,NSInteger cel
 /**
  处理响应 事件
  */
-- (UITableViewCell *)reuseCellID:(NSString *)reuseCellID cellActionBlock:(LCXCellActionBlock)cellActionBlock;
+- (UITableViewCell *)lcx_reuseCellID:(NSString *)reuseCellID cellActionBlock:(LCXCellActionBlock)cellActionBlock;
 
 @end
 
