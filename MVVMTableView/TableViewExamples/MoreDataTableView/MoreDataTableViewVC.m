@@ -160,7 +160,8 @@ typedef NS_ENUM(NSUInteger, NetworkStatus) {
     //1 初始化
     _tableView = AddTableView(self.view,CGRectZero, [UIColor whiteColor],self);
     //2 注册cell类
-     [_tableView lcx_registerCellClasses:@[FirstTableViewCell.class,SecondTableViewCell.class]];
+    _tableView.lcx_registerCellClassNames = @[@"FirstTableViewCell",@"SecondTableViewCell"];
+//     [_tableView lcx_registerCellClasses:@[FirstTableViewCell.class,SecondTableViewCell.class]];
     //3 masonry布局适配
     [_tableView lcx_safeBottomWithTop:88];
     //4 加载更多
@@ -216,7 +217,7 @@ typedef NS_ENUM(NSUInteger, NetworkStatus) {
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     //1 复用cell的id
-    NSString *cellID = _tableView.lcx_reuseCellIDs[indexPath.row%2];
+    NSString *cellID = _tableView.lcx_registerCellClassNames[indexPath.row%2];
     //2 复用cell内响应事件处理
     kWeakSelf;
     UITableViewCell *cell = [tableView lcx_reuseCellID:cellID cellActionBlock:^(NSIndexPath * _Nonnull actionCellIndexPath, NSInteger cellActionIndex) {

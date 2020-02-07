@@ -22,6 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)lcx_registerCellClasses:(NSArray <__kindof Class> *)classes;
 
+//注册类名
+@property (nonatomic, copy) NSArray <NSString *> *lcx_registerCellClassNames;
+
 @end
 
 NS_ASSUME_NONNULL_END
