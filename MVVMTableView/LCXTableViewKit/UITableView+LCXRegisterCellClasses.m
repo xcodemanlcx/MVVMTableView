@@ -61,6 +61,8 @@
         NSString *className = classNames[i];
         if (className) {
             Class cls = NSClassFromString(className);
+            //类的类型
+            if(![cls isSubclassOfClass:UITableViewCell.class]) continue;
             if (registerBlock) {
                 //注册类
                 registerBlock(cls,className);
