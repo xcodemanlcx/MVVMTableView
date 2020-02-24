@@ -76,7 +76,7 @@
         NSDateFormatter *dateFormatter = NSDateFormatter.new;
         [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         NSString *currentDateString = [dateFormatter stringFromDate:lastUpdatedTime];
-        return [@"上次更新时间 " stringByAppendingString:currentDateString];
+        return currentDateString?[@"上次更新时间 " stringByAppendingString:currentDateString]:@"";
     };
 }
 
