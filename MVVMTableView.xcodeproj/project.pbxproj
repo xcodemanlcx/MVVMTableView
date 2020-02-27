@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0739B3552404D1090009236A /* UITableView+LCXReuseViewID.m in Sources */ = {isa = PBXBuildFile; fileRef = 0739B3542404D1090009236A /* UITableView+LCXReuseViewID.m */; };
 		07430C8E23BDC7280069C88C /* AreaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07430C8D23BDC7280069C88C /* AreaModel.m */; };
 		07430C9523BDED000069C88C /* LCXTableBlockDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07430C9423BDED000069C88C /* LCXTableBlockDelegate.m */; };
 		07430CA223BDF8BA0069C88C /* TableViewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07430CA123BDF8BA0069C88C /* TableViewsVC.m */; };
@@ -56,6 +57,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0739B3532404D1090009236A /* UITableView+LCXReuseViewID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+LCXReuseViewID.h"; sourceTree = "<group>"; };
+		0739B3542404D1090009236A /* UITableView+LCXReuseViewID.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+LCXReuseViewID.m"; sourceTree = "<group>"; };
 		07430C8C23BDC7280069C88C /* AreaModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AreaModel.h; sourceTree = "<group>"; };
 		07430C8D23BDC7280069C88C /* AreaModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AreaModel.m; sourceTree = "<group>"; };
 		07430C9323BDED000069C88C /* LCXTableBlockDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCXTableBlockDelegate.h; sourceTree = "<group>"; };
@@ -160,6 +163,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0739B34E2404D0610009236A /* LCXUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				07568CF523C47EEB00452AFE /* LCXUIInitKit */,
+				0739B34F2404D0870009236A /* LCXReuseViewID */,
+				07B0F08123C2E6AE00CA8156 /* LCXViewKit */,
+				074E701C23ACA58300B043D1 /* LCXTableViewKit */,
+				07B0F09C23C3370000CA8156 /* LCXTableViewCellKit */,
+				074ACC4223B986C90064D344 /* LCXListViewStatusTipKit */,
+				07B17EC223B4593300AAE828 /* LCXRefresh */,
+				07B17EBA23B4476C00AAE828 /* LCXMasonry */,
+			);
+			path = LCXUIKit;
+			sourceTree = "<group>";
+		};
+		0739B34F2404D0870009236A /* LCXReuseViewID */ = {
+			isa = PBXGroup;
+			children = (
+				0739B3532404D1090009236A /* UITableView+LCXReuseViewID.h */,
+				0739B3542404D1090009236A /* UITableView+LCXReuseViewID.m */,
+			);
+			path = LCXReuseViewID;
+			sourceTree = "<group>";
+		};
 		074ACC4223B986C90064D344 /* LCXListViewStatusTipKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,13 +251,7 @@
 				07C78C8823B5FC4100AA2924 /* ViewController.m */,
 				07B2EC1123BB24C7007102F0 /* TableViewExamples */,
 				07E0A57D23ACAF8700D30ADA /* MVVM */,
-				07568CF523C47EEB00452AFE /* LCXUIInitKit */,
-				07B0F08123C2E6AE00CA8156 /* LCXViewKit */,
-				074E701C23ACA58300B043D1 /* LCXTableViewKit */,
-				07B0F09C23C3370000CA8156 /* LCXTableViewCellKit */,
-				074ACC4223B986C90064D344 /* LCXListViewStatusTipKit */,
-				07B17EC223B4593300AAE828 /* LCXRefresh */,
-				07B17EBA23B4476C00AAE828 /* LCXMasonry */,
+				0739B34E2404D0610009236A /* LCXUIKit */,
 				074E700C23ACA2DE00B043D1 /* Main.storyboard */,
 				074E700F23ACA2DF00B043D1 /* Assets.xcassets */,
 				074E701123ACA2DF00B043D1 /* LaunchScreen.storyboard */,
@@ -581,6 +602,7 @@
 				07E0A57C23ACAF3B00D30ADA /* SecondTableViewCell.m in Sources */,
 				07B0F08F23C30A2000CA8156 /* NSObject+LCXListModel.m in Sources */,
 				07E0A59A23ACCE5C00D30ADA /* RequestViewModel.m in Sources */,
+				0739B3552404D1090009236A /* UITableView+LCXReuseViewID.m in Sources */,
 				07B154C023B201770080ED99 /* NSObject+LCXDataNull.m in Sources */,
 				07B17ED223B4C3D500AAE828 /* NSMutableArray+LCXHandleMoreData.m in Sources */,
 				074E700B23ACA2DE00B043D1 /* MoreDataTableViewVC.m in Sources */,

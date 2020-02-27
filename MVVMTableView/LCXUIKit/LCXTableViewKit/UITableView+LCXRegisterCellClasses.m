@@ -11,30 +11,6 @@
 
 @implementation UITableView (LCXRegisterCellClasses)
 
-@dynamic lcx_reuseCellIDs;
-
-- (NSMutableArray<__kindof NSString *> *)lcx_reuseCellIDs{
-    id mArr = objc_getAssociatedObject(self, _cmd);
-    if (!mArr) {
-        mArr = @[].mutableCopy;
-        objc_setAssociatedObject(self, _cmd, mArr, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }
-    return mArr;
-}
-
-- (void)lcx_registerCellClasses:(NSArray <__kindof Class> *)classes{
-    if (!classes || ![classes isKindOfClass:NSArray.class]) return;
-    for (NSUInteger i = 0; i<classes.count ; i++) {
-        //注册类复用id
-        NSString *reuseCellID = NSStringFromClass(classes[i]);
-        [self.lcx_reuseCellIDs addObject:reuseCellID];
-        //注册类
-        [self registerClass:classes[i] forCellReuseIdentifier:reuseCellID];
-    }
-}
-
-#pragma mark - property
-
 #pragma mark property:registerCellClassNames
 
 - (NSArray<NSString *> *)lcx_registerCellClassNames{
@@ -43,7 +19,7 @@
 
 - (void)setLcx_registerCellClassNames:(NSArray<NSString *> *)lcx_registerCellClassNames{
     //1 注册类和复用id
-    lcx_registerCellClassNames = [self _lcx_registerClassNames:lcx_registerCellClassNames registerBlock:^(__kindof __unsafe_unretained Class cls, NSString *reuseID) {
+    lcx_registerCellClassNames = [self _lcx_registerClassNames:lcx_registerCellClassNames registerClass:UITableViewCell.class registerBlock:^(__kindof __unsafe_unretained Class cls, NSString *reuseID) {
         [self registerClass:cls forCellReuseIdentifier:reuseID];
     }];
     
@@ -53,7 +29,7 @@
 
 #pragma mark - private
 
-- (NSArray *)_lcx_registerClassNames:(NSArray *)classNames registerBlock:(void (^)(__kindof Class cls,NSString *reuseID))registerBlock{
+- (NSArray *)_lcx_registerClassNames:(NSArray *)classNames registerClass:(Class)registerClass registerBlock:(void (^)(__kindof Class cls,NSString *reuseID))registerBlock{
     //异常处理
     if (!classNames || ![classNames isKindOfClass:NSArray.class]) return nil;
     NSMutableArray *mArr = @[].mutableCopy;
@@ -62,12 +38,16 @@
         if (className) {
             Class cls = NSClassFromString(className);
             //类的类型
-            if(![cls isSubclassOfClass:UITableViewCell.class]) continue;
-            if (registerBlock) {
-                //注册类
-                registerBlock(cls,className);
+            if([cls isSubclassOfClass:registerClass]){
+                if (registerBlock) {
+                    //注册类
+                    registerBlock(cls,className);
+                }
                 //注册类复用id
                 [mArr addObject:className];
+            }else{
+                //注册失败提示：非UITableViewCell子类
+                [mArr addObject:[@"error_" stringByAppendingString: className]];
             }
         }
     }

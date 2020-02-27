@@ -63,7 +63,7 @@
         //1 初始化
         _tableView = AddTableView(self.view,self.view.bounds, [UIColor whiteColor],self.tableDoubleDelegate);
         //2 注册cell类
-        [_tableView lcx_registerCellClasses:@[FirstTableViewCell.class,SecondTableViewCell.class]];
+        _tableView.lcx_registerCellClassNames = @[@"FirstTableViewCell",@"SecondTableViewCell"];
     }
     return _tableView;
 }

@@ -60,7 +60,7 @@
         _tableView = AddTableView(self.view,self.view.bounds, [UIColor whiteColor],self.tableBlockDelegate);
     }
     //2 注册cell类
-    [_tableView lcx_registerCellClasses:@[UITableViewCell.class]];
+    _tableView.lcx_registerCellClassNames = @[@"UITableViewCell"];
     return _tableView;
 }
 
@@ -74,7 +74,7 @@
         return weakSelf.dataArr.count;
     };
     _tableBlockDelegate.cellForRowAtIndexPathBlock = ^UITableViewCell * _Nonnull(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableView.lcx_reuseCellIDs[0]];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableView.lcx_registerCellClassNames[0]];
         cell.textLabel.text = @"hello";
         cell.textLabel.textColor = [UIColor blackColor];
         cell.backgroundColor = [UIColor whiteColor];

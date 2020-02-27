@@ -21,7 +21,7 @@
     NSObject *model = _dataArr[indexPath.row];
     
     //1 复用id
-    LCXTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableView.lcx_reuseCellIDs[0]];
+    LCXTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableView.lcx_registerCellClassNames[0]];
 
     //2 cell响应事件
     if (_cellForRowAtIndexPathBlock) {

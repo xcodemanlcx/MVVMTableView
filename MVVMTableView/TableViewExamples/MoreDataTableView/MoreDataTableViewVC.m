@@ -12,11 +12,10 @@
 #import "DetailViewController.h"
 #import "SecondDetailViewController.h"
 #import "TitleSelectView.h"
-#import "FirstTableViewCell.h"
-#import "SecondTableViewCell.h"
 #import "RequestViewModel.h"
 
 //tableView kit
+#import "LCXTableViewCell.h"
 #import "LCXInitTableView.h"
 #import "LCXTableViewKit.h"
 //数据为空：自定义UI
